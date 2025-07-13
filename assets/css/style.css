@@ -85,6 +85,10 @@ main {
     border-radius: 10px;
 }
 
+.hero-btn:hover{
+    background: #FFB300;
+}
+
 /* 방명록 */
 .guestbook {
     width: 840px;
@@ -159,6 +163,10 @@ main {
     outline: none;
     font-family: inherit;
     cursor: pointer;
+}
+
+.form-btn:hover{
+    background: #FFB300;
 }
 
 /*  푸터  */
