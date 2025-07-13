@@ -61,7 +61,7 @@
                     <p>방명록을 남겨주세요!</p><br>
                     <div class="form">
                         <input type="text" id="name" placeholder="이름(별명)"/>
-                        <button class="form-btn">등록하기</button>
+                        <button class="form-btn" id="submit-btn">등록하기</button>
                         <textarea id="msg" placeholder="한 줄 메세지를 남겨주세요"></textarea>
                     </div>
                     <hr>
@@ -133,7 +133,6 @@
                     location.reload(); // 새로고침해서 목록 갱신
                 })
                 .catch((error) => {
-                    console.error("Error writing document: ", error);
                     alert("오류가 발생했습니다. 다시 시도해주세요.");
                 });
             });
