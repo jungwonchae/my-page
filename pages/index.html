@@ -7,9 +7,13 @@
         
         <title>MyPage - home</title>
 
-        <!-- Firebase SDK 추가 -->
+        <!-- Firebase SDK -->
         <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+        <!-- Firebase 초기화 -->
+        <script src="../assets/js/firebase-init.js"></script>
 
         <!-- 외부 CSS -->
         <link rel="stylesheet" href="../assets/css/style.css" />
@@ -56,28 +60,13 @@
                     <h2> ✍🏻방명록</h2>
                     <p>방명록을 남겨주세요!</p><br>
                     <div class="form">
-                        <input type="text" id="name" placeholder="이름"/>
+                        <input type="text" id="name" placeholder="이름(별명)"/>
                         <button class="form-btn">등록하기</button>
                         <textarea id="msg" placeholder="한 줄 메세지를 남겨주세요"></textarea>
                     </div>
                     <hr>
                     <!-- 내용 js -->
-                    <div class="guestbook-list">
-                        <li>
-                                <strong>재민</strong>
-                                <span>2025-07-13</span>
-                                <p>웹사이트 잘 봤어 :)</p>
-                          </li>
-                          <li>
-                                <strong>지수</strong>
-                                <span>2025-07-12</span>
-                                <p>디자인 너무 예뻐요 💛</p>
-                          </li>
-                          <li>
-                                <strong>민정</strong>
-                                <span>2025-07-11</span>
-                                <p>많이 참고하고 갑니다!</p>
-                          </li>
+                    <div class="guestbook-list" id="guestbook-list">
                     </div>
 
                     <!-- 더보기 버튼 -->
@@ -102,6 +91,52 @@
                     document.body.removeChild(t);
                     alert("이메일 주소가 복사되었습니다.🍀");
                 }
+                // 파이어베이스에서 데이터 가져오기.. 지피티 참고
+                db.collection("guestbook")
+                .orderBy("createdAt", "desc")
+                .limit(3)
+                .get()
+                .then((querySnapshot) => {
+                    const list = document.getElementById("guestbook-list");
+                    querySnapshot.forEach((doc) => {
+                        const data = doc.data();
+                        const li = document.createElement("li");
+                        const date = data.createdAt?.toDate().toISOString().split("T")[0] ?? "날짜 없음";
+                        li.innerHTML = `
+                            <strong>${data.name}</strong>
+                            <span>${date}</span>
+                            <p>${data.msg}</p>
+                        `;
+                        list.appendChild(li);
+                    });
+                });
+                // 파이어베이스에 데이터 저장하기
+                document.getElementById("submit-btn").addEventListener("click", function () {
+                const name = document.getElementById("name").value.trim();
+                const msg = document.getElementById("msg").value.trim();
+
+                if (!name || !msg) {
+                alert("이름과 메세지를 모두 입력해주세요!");
+                return;
+                }
+
+                db.collection("guestbook")
+                .add({
+                    name: name,
+                    msg: msg,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                })
+                .then(() => {
+                    alert("방명록이 등록되었습니다! 🥳");
+                    document.getElementById("name").value = "";
+                    document.getElementById("msg").value = "";
+                    location.reload(); // 새로고침해서 목록 갱신
+                })
+                .catch((error) => {
+                    console.error("Error writing document: ", error);
+                    alert("오류가 발생했습니다. 다시 시도해주세요.");
+                });
+            });
             </script>
         </div>
     </body>

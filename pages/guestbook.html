@@ -7,6 +7,14 @@
         
         <title>MyPage - 방명록</title>
 
+        <!-- Firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+        <!-- Firebase 초기화 -->
+        <script src="../assets/js/firebase-init.js"></script>
+
         <!-- 외부 CSS -->
         <link rel="stylesheet" href="../assets/css/style.css" />
 
@@ -35,22 +43,7 @@
                     <h2> ✍🏻방명록</h2>
                     <p>방명록 모아보기<br>방명록은 홈 화면에서 남겨주세요</p>
                     <!-- 내용 js -->
-                    <div class="guestbook-list">
-                        <li>
-                                <strong>재민</strong>
-                                <span>2025-07-13</span>
-                                <p>웹사이트 잘 봤어 :)</p>
-                          </li>
-                          <li>
-                                <strong>지수</strong>
-                                <span>2025-07-12</span>
-                                <p>디자인 너무 예뻐요 💛</p>
-                          </li>
-                          <li>
-                                <strong>민정</strong>
-                                <span>2025-07-11</span>
-                                <p>많이 참고하고 갑니다!</p>
-                          </li>
+                    <div class="guestbook-list" id="guestbook-list">
                     </div>
 
                 </section>
@@ -73,7 +66,29 @@
                     document.body.removeChild(t);
                     alert("이메일 주소가 복사되었습니다.🍀");
                 }
+
+                // 파이어베이스에서 데이터 가져오기.. 지피티 참고
+                db.collection("guestbook")
+                .orderBy("createdAt", "desc")
+                .get()
+                .then((querySnapshot) => {
+                const list = document.getElementById("guestbook-list");
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    const li = document.createElement("li");
+
+                    const date = data.createdAt?.toDate().toISOString().split("T")[0] ?? "날짜 없음";
+
+                    li.innerHTML = `
+                    <strong>${data.name}</strong>
+                    <span>${date}</span>
+                    <p>${data.msg}</p>
+                    `;
+                    list.appendChild(li);
+                    });
+                });
             </script>
+
         </div>
     </body>
 </html>

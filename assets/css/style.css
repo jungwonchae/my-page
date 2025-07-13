@@ -118,6 +118,7 @@ main {
 .guestbook-list {
     width: 90%;
     margin: 0 auto 3rem auto;
+    list-style: none;
 }
 
 /* 방명록 입력 */
