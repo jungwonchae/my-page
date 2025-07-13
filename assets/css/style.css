@@ -1,0 +1,171 @@
+/*  기본 설정  */
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #FFF8E1;
+}
+
+/* 네비게이션 바 */
+.nav-bar {
+    text-align: center;
+    padding: 2.5rem 0.6rem;
+    gap: 3rem;
+}
+  
+.nav-bar a {
+    color: #4B4B4B;
+    margin: 0 10rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.nav-bar a.active{
+    color: #FFC107;
+}
+
+/* 메인 */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero {
+    padding: 4rem 2rem;
+}
+
+.hero-content {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto; /* 가운데 정렬 */
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    flex: 1;
+}
+
+.text h1 {
+    font-size: 45px;
+    font-weight: 800;
+    color: #4B4B4B;
+}
+
+.text p {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 100px;
+    color: #4B4B4B;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.hero-btn{
+    padding: 0.7rem 1.2rem;
+    background: #745700;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    border-radius: 10px;
+}
+
+/* 방명록 */
+.guestbook {
+    width: 840px;
+    margin: 5rem auto;
+    padding: 2rem 3rem;
+    background-color: white;
+    border-radius: 20px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+.guestbook h2{
+    font-size: 30px;
+    font-weight: 800;
+    color: #4B4B4B;
+    text-align: left;
+}
+
+.guestbook p {
+    font-size: 15px;
+    font-weight: 300;
+    color: #4B4B4B;
+    text-align: left;
+}
+
+.guestbook hr {
+    margin: 50px; /* 위 아래 여백*/
+    border-top: 1px solid #C6C6C6;
+    width: 90%;
+}
+
+.guestbook-list {
+    width: 90%;
+    margin: 0 auto 3rem auto;
+}
+
+/* 방명록 입력 */
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.form input {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.6rem;
+    border: 1px solid #745700;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+.form textarea {
+    width: 100%;
+    border: 1px solid #745700;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.form-btn{
+    padding: 0.7rem 1.2rem;
+    background: #745700;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    border-radius: 10px;
+    /* 기본 버튼 스타일 없애기 */
+    border: none;
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/*  푸터  */
+.footer {
+    background: #745700;
+    color: #FFFFFF;
+    text-align: center;
+    height: 52px;
+    padding: 0.3rem 0;
+    margin-top: 2rem;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8"/>
+        <!-- 반응형 웹 설정 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>MyPage</title>
+
+        <!-- 외부 CSS -->
+        <link rel="stylesheet" href="../assets/css/style.css" />
+
+        <!-- Pretendard 폰트 불러오기 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    </head>
+
+    <body>
+        <div class="wrapper">
+            
+            <!--  헤더  -->
+            <header class="header">
+                <!-- 하단 네비게이션 바 -->
+                <nav class="nav-bar">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="guestbook.html" class="active">방명록</a>
+                </nav>
+            </header>
+
+            <!--  메인 콘텐츠 영역 -->
+            <main>
+                <!-- 방명록 -->
+                <section class="guestbook">
+                    <h2> ✍🏻방명록</h2>
+                    <p>방명록 모아보기<br>방명록은 홈 화면에서 남겨주세요</p>
+                    <!-- 내용 js -->
+                    <div class="guestbook-list">
+                        <li>
+                                <strong>재민</strong>
+                                <span>2025-07-13</span>
+                                <p>웹사이트 잘 봤어 :)</p>
+                          </li>
+                          <li>
+                                <strong>지수</strong>
+                                <span>2025-07-12</span>
+                                <p>디자인 너무 예뻐요 💛</p>
+                          </li>
+                          <li>
+                                <strong>민정</strong>
+                                <span>2025-07-11</span>
+                                <p>많이 참고하고 갑니다!</p>
+                          </li>
+                    </div>
+
+                </section>
+            </main>
+
+            <!--  푸터  -->
+            <footer class="footer">
+                <p>@jungwonchae</p>
+            </footer>
+
+            <!-- js -->
+            <script>
+                // 티스토리 - https://manition.tistory.com/8 참고
+                function copyToClipboard(val){
+                    var t = document.createElement("textarea");
+                    document.body.appendChild(t);
+                    t.value = val;
+                    t.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(t);
+                    alert("이메일 주소가 복사되었습니다.🍀");
+                }
+            </script>
+        </div>
+    </body>
+</html>

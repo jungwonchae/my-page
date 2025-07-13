@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8"/>
+        <!-- 반응형 웹 설정 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>MyPage</title>
+
+        <!-- 외부 CSS -->
+        <link rel="stylesheet" href="../assets/css/style.css" />
+
+        <!-- Pretendard 폰트 불러오기 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+        <style>
+            .contact-info {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            .contact-info p{
+                font-size: 20px;
+                font-weight: lighter;
+                text-align: center;
+                color: #4B4B4B;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .contact-item img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .contact-text{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .contact-text h2 {
+                font-size: 1.5rem;
+                font-weight: 800;
+                margin: 0;
+                text-align: left;
+            }
+
+            .contact-text p {
+                font-size: 24px;
+                font-weight: bold;
+                margin: 0.2rem 0 0;
+                text-align: left;
+                color: #4B4B4B;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            
+            <!--  헤더  -->
+            <header class="header">
+                <!-- 하단 네비게이션 바 -->
+                <nav class="nav-bar">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html" class="active">Contact</a>
+                    <a href="guestbook.html">방명록</a>
+                </nav>
+            </header>
+
+            <!--  메인 콘텐츠 영역 -->
+            <main>
+                <section class="contact-info">
+                    <p>💌 편한 방법으로 언제든지 연락 주세요 :)</p>
+                    <div class="contact-item">
+                        <img src="../assets/images/git.png">
+                        <div class="contact-text">
+                            <h2>GitHub</h2>
+                            <p>@jungwonchae</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../assets/images/gmail.png">
+                        <div class="contact-text">
+                            <h2>Gmail</h2>
+                            <p>@jjungwon0222</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <img src="../assets/images/insta.png">
+                        <div class="contact-text">
+                            <h2>Instagram</h2>
+                            <p>@zzung1_</p>
+                        </div>
+                    </div>
+
+                </section>
+            </main>
+
+            <!--  푸터  -->
+            <footer class="footer">
+                <p>@jungwonchae</p>
+            </footer>
+
+            <!-- js -->
+        </div>
+    </body>
+</html>

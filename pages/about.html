@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8"/>
+        <!-- 반응형 웹 설정 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>MyPage</title>
+
+        <!-- 외부 CSS -->
+        <link rel="stylesheet" href="../assets/css/style.css" />
+
+        <!-- Pretendard 폰트 불러오기 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+        <style>
+            .about-section h3 {
+                font-size: 25px;
+                color: #4B4B4B;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+                font-weight: bold;
+            }
+
+            .like-box {
+                display: flex;
+                gap: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .box {
+                width: 150px;
+                height: 150px;
+                background-color: white;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .box img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .list {
+                list-style: none;
+            }
+
+            .list li {
+                font-weight: 400;
+                font-size: 20px;
+                color: #4B4B4B;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            
+            <!--  헤더  -->
+            <header class="header">
+                <!-- 하단 네비게이션 바 -->
+                <nav class="nav-bar">
+                    <a href="index.html">Home</a>
+                    <a href="about.html" class="active">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="guestbook.html">방명록</a>
+                </nav>
+            </header>
+
+            <!--  메인 콘텐츠 영역 -->
+            <main>
+                <section class="hero">
+                    <div class="hero-content">
+                        <div class="text">
+                            <h1>About Me</h1>
+                            <h1>안녕하세요<br>
+                                저는 채정원입니다.</h1>
+                        </div>
+                        <div class="profile">
+                            <img src="../assets/images/pixel.png" alt="프로필">
+                        </div>
+                    </div>
+                </section>
+                <section class="about-section">
+                    <h3>💛 내가 좋아하는 것들</h3>
+                    <div class="like-box">
+                        <div class="box">
+                            <img src="../assets/images/dogcat.png" alt="취미">
+                        </div>
+                        <div class="box">
+                            <img src="../assets/images/bake.png" alt="취미">
+                        </div>
+                        <div class="box">
+                            <img src="../assets/images/book.png" alt="취미">
+                        </div>
+                        <div class="box">
+                            <img src="../assets/images/coffee.png" alt="취미">
+                        </div>
+                        <div class="box">
+                            <img src="../assets/images/net.png" alt="취미">
+                        </div>
+                    </div>
+                    <h3>💭 MBTI</h3>
+                    <ul class="list">
+                        <li>INFJ 🌱</li>
+                    </ul>
+                    <h3>💬 성격 한 줄 소개 </h3>
+                    <ul class="list">
+                        <li>낯을 많이 가리지만 친해지면 말이 많이지는 편이에요</li>
+                    </ul>
+                    <h3>💛 좋아하는 색상</h3>
+                    <ul class="list">
+                        <li>노란색</li>
+                    </ul>
+                    <h3>💡 관심 분야 / 배우고 있는 것</h3>
+                    <ul class="list">
+                        <li>웹 개발</li>
+                    </ul>
+                    <h3>📚 최근 읽은 책 3권</h3>
+                    <ul class="list">
+                        <li>채식주의자</li>
+                        <li>칵테일, 러브, 좀비</li>
+                        <li>긴긴밤</li>
+                    </ul>
+                </section>
+            </main>
+
+            <!--  푸터  -->
+            <footer class="footer">
+                <p>@jungwonchae</p>
+            </footer>
+
+            <!-- js -->
+            
+        </div>
+    </body>
+</html>
